@@ -1,0 +1,25 @@
+<h1>Your Cart</h1>
+
+<% total=0 %>
+<%= link_to 'Empty Your Cart', cart_clear_path %>
+
+<ul>
+<% @cart.each do | id, quantity | %>
+<% product = Product.find_by_id(id) %>
+    
+      <li>
+      <%= link_to product.title, product %>
+      <p><%= product.description %></p>
+       <p>Price: <%= product.price%> PKr</p>
+<p>Quantity: <%= quantity%></p>
+
+      </li>
+     <% total += quantity*product.price%>
+
+
+
+
+<% end %>
+	</ul>
+
+	<p>Total <b><%= total %> </b> PKr</p>

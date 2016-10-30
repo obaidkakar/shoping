@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+  
+<table border="2px solid black">
+  <th colspan="2">
+    <h1>This Is My Product</h1></th>
+  <tr>
+    <td><strong>Title:</strong></td>
+    <td><%= @product.title %></td>
+  </tr>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td><%= @product.description %></td>
+
+  </tr>  
+<tr>
+    <td><strong>Image url:</strong></td>
+     
+    <td><img src="<%= @product.image_url %>"></td>
+
+</tr>
+
+<tr>
+  <td><strong>Price:</strong></td>
+  <td><%= @product.price %></td>
+</tr>
+
+<tr>
+  <td><strong>Category:</strong></td>
+  <td><%= @product.category %></td>
+</tr>
+
+<tr>
+  <td><strong>Subcatagory:</strong></td>
+  <td><%= @product.subcatagory %></td>
+</tr>
+</table>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
